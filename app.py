@@ -15,32 +15,36 @@ st.markdown("Provide the following details")
 
 
 # Numeric inputs
-age = st.number_input("Age", 18, 100, 40)
-resting_bp = st.number_input("Resting BP", 80, 220, 120)
-cholesterol = st.number_input("Cholesterol", 0, 600, 200)
-fasting_bs = st.selectbox("Fasting Blood Sugar", [0, 1])
-max_hr = st.number_input("Max Heart Rate", 60, 220, 150)
-oldpeak = st.number_input("Oldpeak", 0.0, 10.0, 1.0)
+# Numeric inputs
+age = st.number_input("Age", 18, 100, 40, key="age")
+resting_bp = st.number_input("Resting BP", 80, 220, 120, key="resting_bp")
+cholesterol = st.number_input("Cholesterol", 0, 600, 200, key="cholesterol")
+fasting_bs = st.selectbox("Fasting Blood Sugar", [0, 1], key="fasting_bs")
+max_hr = st.number_input("Max Heart Rate", 60, 220, 150, key="max_hr")
+oldpeak = st.number_input("Oldpeak", 0.0, 10.0, 1.0, key="oldpeak")
 
 # Categorical inputs
-sex = st.selectbox("Sex", ["M", "F"])
+sex = st.selectbox("Sex", ["M", "F"], key="sex")
 chest_pain = st.selectbox(
     "Chest Pain Type",
-    ["ATA", "NAP", "ASY", "TA"]
+    ["ATA", "NAP", "ASY", "TA"],
+    key="chest_pain"
 )
 resting_ecg = st.selectbox(
     "Resting ECG",
-    ["Normal", "ST", "LVH"]
+    ["Normal", "ST", "LVH"],
+    key="resting_ecg"
 )
 exercise_angina = st.selectbox(
     "Exercise Angina",
-    ["Y", "N"]
+    ["Y", "N"],
+    key="exercise_angina"
 )
 st_slope = st.selectbox(
     "ST Slope",
-    ["Up", "Flat", "Down"]
+    ["Up", "Flat", "Down"],
+    key="st_slope"
 )
-
 if st.button("Predict"):
     raw_input = {
         "Age": age,
